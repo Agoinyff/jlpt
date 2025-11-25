@@ -5,27 +5,26 @@ const FinalSprintPlan = () => {
   const [progress, setProgress] = useState({});
   const [currentDay, setCurrentDay] = useState(1);
 
-  useEffect(() => {
-    const loadProgress = async () => {
-      try {
-        const result = await window.storage.get('jlpt-final-sprint');
-        if (result) {
-          setProgress(JSON.parse(result.value));
-        }
-      } catch (error) {
-        console.log('首次使用，初始化进度');
-      }
-    };
-    loadProgress();
-  }, []);
-
-  const saveProgress = async (newProgress) => {
-    try {
-      await window.storage.set('jlpt-final-sprint', JSON.stringify(newProgress));
-    } catch (error) {
-      console.error('保存失败:', error);
+ useEffect(() => {
+  // 从 localStorage 加载进度
+  try {
+    const saved = localStorage.getItem('jlpt-final-sprint');
+    if (saved) {
+      setProgress(JSON.parse(saved));
     }
-  };
+  } catch (error) {
+    console.log('首次使用，初始化进度');
+  }
+}, []);
+
+const saveProgress = (newProgress) => {
+  // 保存到 localStorage
+  try {
+    localStorage.setItem('jlpt-final-sprint', JSON.stringify(newProgress));
+  } catch (error) {
+    console.error('保存失败:', error);
+  }
+};
 
   const getDateInfo = (day) => {
     const startDate = new Date('2024-11-26');

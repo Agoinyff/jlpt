@@ -27,7 +27,7 @@ const saveProgress = (newProgress) => {
 };
 
   const getDateInfo = (day) => {
-    const startDate = new Date('2024-11-26');
+    const startDate = new Date('2025-11-26');
     const date = new Date(startDate);
     date.setDate(startDate.getDate() + day - 1);
     

@@ -417,7 +417,7 @@ const saveProgress = (newProgress) => {
             <p>✨ 你已经刷完所有真题，基础非常扎实！</p>
             <p>✨ 现在只需要保持状态，正常发挥就能过！</p>
             <p>✨ 每完成一个任务就打勾，让焦虑变成成就感！</p>
-            <p className="text-lg font-bold mt-4">🎯 你可以的！12月8日，等你的好消息！</p>
+            <p className="text-lg font-bold mt-4">🎯 你可以的！12月7日，等你的好消息！</p>
           </div>
         </div>
       </div>
